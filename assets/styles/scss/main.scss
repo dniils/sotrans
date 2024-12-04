@@ -1,0 +1,372 @@
+@use "typography";
+@use "button";
+@use "burger-button";
+@use "accordion";
+@use "animation";
+@use "scrollbar";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #555555;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #cccccc;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 24px 48px;
+  }
+  @media screen and (min-width: 1920px) {
+    padding: 24px 96px;
+  }
+
+  &__contact {
+    display: none;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 77px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 32px 16px;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #fff;
+  }
+
+  &__logo {
+    max-width: 188px;
+  }
+}
+
+.section {
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    padding: 56px 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 80px 48px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding: 96px;
+    gap: 96px;
+  }
+
+  &_hero {
+    .section__title,
+    .section__text {
+      margin-bottom: 24px;
+    }
+  }
+
+  &_partners {
+    position: relative;
+    background-color: #efefef;
+    justify-content: center;
+    padding: 0;
+    height: 112px;
+    overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+      height: 144px;
+    }
+    @media screen and (min-width: 1440px) {
+      height: 192px;
+    }
+    @media screen and (min-width: 1920px) {
+      height: 224px;
+    }
+
+    .partners {
+      position: absolute;
+      top: 50%;
+      display: flex;
+      flex-direction: row;
+      gap: 80px;
+      margin: 0 auto;
+
+      img {
+        transform: translateY(-50%);
+      }
+
+      @media screen and (max-width: 768px) {
+        animation: slide 10s linear infinite;
+      }
+    }
+  }
+
+  &_stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @media screen and (min-width: 1440px) {
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1920px) {
+    }
+  }
+
+  &__image-group {
+    display: flex;
+    flex-wrap: wrap;
+    // max-width: 816px;
+    gap: 24px;
+
+    .section__image {
+      width: 100%;
+      height: 316px;
+      object-fit: cover;
+    }
+
+    @media screen and (min-width: 768px) {
+      .section__image:nth-child(1),
+      .section__image:nth-child(2) {
+        width: calc(50% - 12px);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    border-radius: 24px;
+  }
+
+  .hero-img {
+    height: 400px;
+
+    @media screen and (min-width: 1440px) {
+      height: 500px;
+    }
+    @media screen and (min-width: 1920px) {
+      height: 600px;
+      max-width: 816px;
+    }
+  }
+
+  &__list {
+    padding-left: 24px;
+    margin-top: 8px;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list-item::before {
+    content: "";
+    display: block;
+    align-self: center;
+    height: 2px;
+    width: 12px;
+    background-color: var(--brand);
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .btn {
+    margin-top: 32px;
+  }
+}
+
+.map {
+  flex-grow: 1;
+
+  & iframe {
+    border-radius: 25px;
+
+    @media screen and (min-width: 768px) {
+      min-width: 648px;
+      height: 500px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      max-width: 816px;
+      height: 600px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      height: 600px;
+    }
+  }
+}
+
+.form {
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 816px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media screen and (min-width: 768px) {
+      width: calc(50% - 8px);
+    }
+
+    &_msg {
+      width: 100%;
+
+      .form__input {
+        resize: none;
+      }
+    }
+
+    &_checkbox {
+      flex-direction: row;
+      align-items: flex-start;
+      color: #555555;
+
+      @media screen and (min-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+    padding: 14px 12px;
+  }
+}
+
+.footer {
+  &__top,
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding: 16px 32px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      flex-direction: row;
+      padding: 24px 48px;
+    }
+
+    @media screen and (min-width: 1920px) {
+      flex-direction: row;
+      padding: 24px 96px;
+    }
+  }
+
+  &__top {
+    gap: 48px;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  &__bottom {
+    gap: 16px;
+  }
+
+  &__rights {
+    text-align: center;
+  }
+
+  &__logo {
+    max-width: 164px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__social-link {
+    transition: scale 0.1s ease-in;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+}

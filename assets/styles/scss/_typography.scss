@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --brand: #eb5a0a;
+  --default: #353535;
+  --soft: #727272;
+}
+
+body {
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.stat__title {
+  font-family: "Roboto Condensed", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.text-highlight {
+  color: var(--brand);
+}
+
+.section {
+  &_hero {
+    .section__title {
+      font-size: 32px;
+      line-height: 36px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 44px;
+        line-height: 56px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        font-size: 64px;
+        line-height: 72px;
+      }
+
+      @media screen and (min-width: 1920px) {
+        font-size: 72px;
+        line-height: 80px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 40px;
+    line-height: 48px;
+
+    @media screen and (min-width: 1440px) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+}
+
+.stat {
+  &__title {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 800;
+
+    @media screen and (min-width: 768px) {
+      font-size: 52px;
+      line-height: 60px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      font-size: 80px;
+      line-height: 96px;
+    }
+
+    @media screen and (min-width: 1920px) {
+      font-size: 100px;
+      line-height: 120px;
+    }
+  }
+}
+
+.form {
+  &__label {
+    font-size: 10px;
+    line-height: 16px;
+    color: #8e8e8e;
+
+    @media screen and (min-width: 1440px) {
+      font-size: 12px;
+    }
+
+    &_checkbox {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__input::placeholder {
+    font-family: "Rubik", serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b3b3b3;
+
+    @media screen and (min-width: 1440px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

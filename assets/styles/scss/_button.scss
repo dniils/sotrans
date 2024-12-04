@@ -1,0 +1,22 @@
+.btn {
+  color: #fff;
+  background-color: var(--brand);
+  padding: 14px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: unset;
+    align-self: flex-start;
+  }
+}
