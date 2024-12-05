@@ -23,7 +23,12 @@
   &__tab {
     display: flex;
     justify-content: space-between;
+    gap: 4px;
     background-color: #fafafa;
+
+    @media screen and (min-width: 768px) {
+      gap: 6px;
+    }
 
     &:hover {
       cursor: pointer;

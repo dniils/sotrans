@@ -115,6 +115,11 @@ h5,
   }
 }
 
+.header__link {
+  font-size: 14px;
+  line-height: 20px;
+}
+
 .btn {
   color: #fff;
   background-color: var(--brand);
@@ -145,6 +150,11 @@ h5,
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+}
+@media screen and (min-width: 1024px) {
+  .burger-btn {
+    display: none;
+  }
 }
 .burger-btn:hover {
   cursor: pointer;
@@ -182,7 +192,13 @@ h5,
 .accordion__tab {
   display: flex;
   justify-content: space-between;
+  gap: 4px;
   background-color: #fafafa;
+}
+@media screen and (min-width: 768px) {
+  .accordion__tab {
+    gap: 6px;
+  }
 }
 .accordion__tab:hover {
   cursor: pointer;
@@ -278,6 +294,45 @@ a {
 .header__contact {
   display: none;
 }
+@media screen and (min-width: 1440px) {
+  .header__contact {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    min-width: 348px;
+  }
+}
+.header__contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header__link {
+  text-decoration: none;
+}
+@media screen and (min-width: 1440px) {
+  .header__link {
+    font-weight: 500;
+  }
+}
+.header__link_mail, .header__link_tel {
+  display: flex;
+  gap: 8px;
+}
+.header__link_mail::before, .header__link_tel::before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.header__link_mail::before {
+  background-image: url(/assets/images/icons/mail.svg);
+}
+.header__link_tel::before {
+  background-image: url(/assets/images/icons/phone.svg);
+}
 .header__menu {
   position: fixed;
   top: 77px;
@@ -290,6 +345,26 @@ a {
   flex-direction: column;
   gap: 16px;
   background-color: #fff;
+  transition: transform 0.1s ease-in;
+}
+@media screen and (min-width: 768px) {
+  .header__menu {
+    padding: 32px 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__menu {
+    position: initial;
+    height: unset;
+    width: unset;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    transform: translateX(0);
+  }
+}
+.header__menu_active {
+  transform: translateX(0);
 }
 .header__logo {
   max-width: 188px;

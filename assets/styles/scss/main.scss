@@ -41,6 +41,48 @@ a {
 
   &__contact {
     display: none;
+
+    @media screen and (min-width: 1440px) {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      min-width: 348px;
+    }
+  }
+
+  &__contact-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @media screen and (min-width: 1440px) {
+      font-weight: 500;
+    }
+
+    &_mail,
+    &_tel {
+      display: flex;
+      gap: 8px;
+    }
+    &_mail::before,
+    &_tel::before {
+      display: block;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &_mail::before {
+      background-image: url(/assets/images/icons/mail.svg);
+    }
+    &_tel::before {
+      background-image: url(/assets/images/icons/phone.svg);
+    }
   }
 
   &__menu {
@@ -55,6 +97,25 @@ a {
     flex-direction: column;
     gap: 16px;
     background-color: #fff;
+    transition: transform 0.1s ease-in;
+
+    @media screen and (min-width: 768px) {
+      padding: 32px 32px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      position: initial;
+      height: unset;
+      width: unset;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+      transform: translateX(0);
+    }
+
+    &_active {
+      transform: translateX(0);
+    }
   }
 
   &__logo {
