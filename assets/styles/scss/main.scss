@@ -48,7 +48,7 @@ a {
   &__contact {
     display: none;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1201px) {
       display: flex;
       gap: 16px;
       align-items: center;
@@ -109,12 +109,13 @@ a {
       padding: 32px 32px;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1201px) {
       position: initial;
       height: unset;
       width: unset;
       flex-direction: row;
       justify-content: center;
+      gap: 32px;
       padding: 0;
       transform: translateX(0);
     }
@@ -126,6 +127,51 @@ a {
 
   &__logo {
     max-width: 188px;
+  }
+
+  &__menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+
+    &:hover {
+      .header__dropdown {
+        z-index: 2;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__dropdown {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 30px;
+    width: 280px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+
+    @media screen and (pointer: fine) {
+      transition: visibility 0.2s, opacity 0.2s ease-in-out;
+    }
+
+    & .header__link::before {
+      content: "@";
+      margin-right: 8px;
+    }
+  }
+
+  &__chevron {
+    width: 20px;
+    height: 20px;
   }
 }
 
