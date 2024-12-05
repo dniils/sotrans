@@ -4,6 +4,7 @@
 @use "accordion";
 @use "animation";
 @use "scrollbar";
+@use "cookie-notice";
 
 * {
   margin: 0;
@@ -17,6 +18,11 @@ ul {
 
 a {
   color: #555555;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .header {
