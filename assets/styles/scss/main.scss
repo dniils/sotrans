@@ -377,6 +377,7 @@ a {
   }
 
   &__label {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -409,6 +410,29 @@ a {
     border: 1px solid #cccccc;
     border-radius: 12px;
     padding: 14px 12px;
+
+    &_error {
+      border-color: #f0483d;
+    }
+  }
+
+  &__error-message-wrapper {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    color: #f0483d;
+
+    &_active {
+      display: flex;
+    }
+  }
+
+  &__pass-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 35px;
+    background-color: #fff;
   }
 }
 

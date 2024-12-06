@@ -320,6 +320,10 @@
                   placeholder="k.konstantinopolskiy@mail.ru"
                   required
                 />
+                <div class="form__error-message-wrapper">
+                  <img src="assets/images/icons/info-err.svg" alt="notice" />
+                  <span class="form__error-message"></span>
+                </div>
               </label>
               <label class="form__label">
                 Пароль
@@ -327,19 +331,29 @@
                   type="password"
                   name="pass"
                   class="form__input"
+                  placeholder="Введите пароль"
                   required
+                />
+                <img
+                  class="form__pass-icon"
+                  src="assets/images/icons/eye.svg"
+                  alt="show/hide"
                 />
               </label>
               <label class="form__label">
                 Номер телефона
                 <input
                   type="tel"
+                  id="phone"
                   name="phone"
                   class="form__input"
                   placeholder="+7 (___) ___-__-__"
-                  pattern="[7]{1}[0-9]{10}"
                   required
                 />
+                <div class="form__error-message-wrapper">
+                  <img src="assets/images/icons/info-err.svg" alt="notice" />
+                  <span class="form__error-message">Message here</span>
+                </div>
               </label>
 
               <label class="form__label form__label_msg">
@@ -428,5 +442,6 @@
 
     <script src="js/burger.js"></script>
     <script src="js/cookie-notice.js"></script>
+    <script src="js/form.js"></script>
   </body>
 </html>

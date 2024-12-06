@@ -667,6 +667,7 @@ a {
   }
 }
 .form__label {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -697,6 +698,25 @@ a {
   border: 1px solid #cccccc;
   border-radius: 12px;
   padding: 14px 12px;
+}
+.form__input_error {
+  border-color: #f0483d;
+}
+.form__error-message-wrapper {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  color: #f0483d;
+}
+.form__error-message-wrapper_active {
+  display: flex;
+}
+.form__pass-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 35px;
+  background-color: #fff;
 }
 
 .footer__top, .footer__bottom {
